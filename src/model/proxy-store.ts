@@ -145,7 +145,7 @@ export class ProxyStore {
         this.server = getRemote({
             cors: false,
             suggestChanges: false,
-            standaloneServerUrl: 'http://127.0.0.1:45456',
+            standaloneServerUrl: 'http://' + process.env.APP_STANDALONE_URL,
             // User configurable settings:
             http2: this.http2Enabled
         });

@@ -39,7 +39,9 @@ const authHeaders = authTokenPromise.then((authToken): Record<string, string> =>
 );
 
 const graphql = async <T extends {}>(operationName: string, query: string, variables: unknown) => {
-    const response = await fetch('http://127.0.0.1:45457', {
+    var serverUrl = 'http://' + process.env.APP_SERVER_URL!;
+    debugger
+    const response = await fetch(serverUrl, {
         method: 'POST',
         headers: {
             ...await authHeaders,

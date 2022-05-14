@@ -57,8 +57,10 @@ writeToLog({ type: 'startup' });
 // we forcibly update the UI immediately. Should only ever happen once.
 
 type ServerStatus = 'accessible' | 'auth-required' | 'inaccessible'
+var serverUrl = "http://"+ process.env.APP_SERVER_URL + '/';
+debugger
 const serverStatus: Promise<ServerStatus> =
-    fetch("http://127.0.0.1:45457/", { method: 'POST' })
+    fetch(serverUrl, {method: 'POST' })
     .then((response) => {
         if (response.status === 403) return 'auth-required';
         else return 'accessible';

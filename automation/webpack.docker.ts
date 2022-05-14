@@ -33,10 +33,10 @@ export default merge(common, {
     ,
     plugins: [
         new Webpack.EnvironmentPlugin({
-            "APP_HOST":"127.0.0.1",
+            "APP_HOST":"0.0.0.0",
             "APP_PUBLIC_URL":"local.httptoolkit.tech:8080",
-            "APP_STANDALONE_URL":"127.0.0.1:45456",
-            "APP_SERVER_URL":"127.0.0.1:45457",
+            "APP_STANDALONE_URL":"0.0.0.0:45456",
+            "APP_SERVER_URL":"0.0.0.0:45457",
             "APP_SERVER_PORT":"45457",
             "APP_SERVER_LOCALHOST":"localhost:45457"
         })
